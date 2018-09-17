@@ -1,0 +1,155 @@
+@icons: copy, save, plaster, top, bottom, up, down, trun-left, trun-right, flip-x, flip-y, select, zoom-out, zoom-in, rect, remove, list, pre, next;
+.generate-icons(length(@icons));
+.generate-icons(@n, @i: 1) when (@i =< @n) {
+    @name:extract(@icons, @i);
+    .icon-@{name} {
+        .navbar-icon {
+          background-image: replace(~'url("/static/icons/icon-iconurl.png")', 'iconurl', @name);
+        }
+
+        &.on .navbar-icon,
+        &:hover .navbar-icon {
+          background-image: replace(~'url("/static/icons/icon-iconurl-on.png")', 'iconurl', @name);
+        }
+    }
+    .generate-icons(@n, (@i + 1));
+}
+
+.top-bar{
+    > li {
+        margin:0 4px;
+    }
+}
+
+.icon-cengdie{
+    background-image:url("/static/icons/icon-cengdie.png");
+    background-repeat:no-repeat;
+    width:50px;
+    height:50px;
+    background-size:contain;
+}
+
+.icon-loading{
+    width:40px;
+    height:20px;
+    display:inline-block;
+    text-align:center;
+
+    .navbar-icon{
+        background-image:url("/static/icons/icon-loading.png");
+        width:20px;
+        height:20px;
+        display:inline-block;
+        background-size:contain;
+    }
+}
+
+.icon-spinner{
+    text-align: center;
+    -webkit-animation: icon-spin 1.5s infinite steps(16);
+    animation: icon-spin 1.5s infinite steps(16);
+}
+
+@-webkit-keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.zoom{
+    color:#495060;
+    cursor:pointer;
+    border-bottom:1px solid #495060;
+}
+
+.zoom-txt{
+    padding:0 5px;
+}
+
+.bar-bg{
+    background:#F7F7F7;
+}
+
+.tbar-right{
+    display:inline-block;
+    float:right;
+    margin-right:40px;
+}
+
+.series-bbar-btn{
+    display:inline-block;
+    width:60px;
+    height:26px;
+    cursor:pointer;
+
+    > i{
+        display:inline-block;
+        width:100%;
+        height:100%;
+    }
+
+    >i.navbar-icon{
+        background-size:contain;
+    }
+}
+
+.serie-img{
+    > img{
+        max-height:200px;
+    }
+}
+
+.serie-item{
+    -webkit-user-select: none;
+}
+
+.svg-box{
+    background-color:#fff;
+}
+
+.zhuangpei{
+    background-color:#e4e4e4;
+
+    .content-aside{
+        background-color:#f7f7f7;
+
+    }
+
+    .serie-prd{
+        border-bottom: 1px solid #e4e4e4;
+    }
+
+    .series-bar, .series-bbar{
+        border-color:#e4e4e4;
+    }
+
+    .serie-item{
+        background-color:#b7b7b7;
+    }
+}
+
+.b7.ivu-btn-circle.ivu-btn-icon-only.ivu-btn-small{
+    background:#b7b7b7;
+    font-size: 14px;
+    line-height: 18px;
+    height: 18px;
+    width: 18px;
+    color:#008eea;
+    text-align:center;
+}

@@ -1,0 +1,315 @@
+@import './varibles.less';
+#nprogress {
+    .bar { background: @nprogress!important}
+    .spinner-icon{
+        border-top-color:@nprogress!important; border-left-color:@nprogress!important;
+    }
+}
+html, body{
+    height: 100%;
+}
+body{-webkit-text-size-adjust:none}
+.layout{
+    // background: #f5f7f9;
+    background:#f0f0f0;
+    position: relative;
+    height: 100%;
+}
+.layout-breadcrumb{
+    padding: 10px 15px 0;
+}
+.layout-content{
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    height: 100%;
+}
+.layout-content-main {
+    display: flex; flex-direction: row; height: 100%;
+}
+.content-main{
+    margin: 5px; height: 100%; flex: 1; overflow-y: auto; overflow-x: hidden;
+    .page-content{
+        padding:15px;
+    }
+}
+.content-aside{
+    margin: 5px 0 5px 0; width: 240px; height: 100%; background: #f7f7f7;
+    .page-aside{
+        display: flex; flex-direction: column; height: 100%;
+    }
+    .aside { flex: 1; background: #f7f7f7; overflow: auto;}
+    .aside-btn {
+        height: 86px; margin-top: 5px; background: #f7f7f7; display: flex; justify-content: center; align-items: center;
+    }
+}
+.layout-copy{
+    text-align: center;
+    padding: 10px 0 20px;
+    color: #9ea7b4;
+}
+.layout-menu-left{
+    position: fixed;
+    width: 40px;
+    top: 35px;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    .menu-item {
+        padding: 10px;
+    }
+    z-index: 8;
+}
+.layout-header{
+    height: 35px;
+    background: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    position: fixed;
+    top: 0; left: 0; right:0;
+    z-index: 9;
+}
+.layout-logo-left{
+    width: 40px;
+    height: 40px;
+    background: #624B4B;
+    border-radius: 50%;
+    margin: 10px auto 5px auto;
+}
+.layout-ceiling-main a{
+    color: #9ba7b5;
+}
+.layout-hide-text .layout-text{
+    display: none;
+}
+.layout-menu-left{
+    transition: width .2s ease-in-out;
+    background-color:#f7f7f7;
+}
+.layout-header {
+    background-color:#f7f7f7;
+    transition: left .2s ease-in-out; color:#666; display:flex; flex-direction: row; justify-content: space-between; align-items: center;
+}
+.container { position: absolute; top: 35px; left: 40px; right: 0; bottom: 0; transition: margin .2s ease-in-out;}
+
+.aside-toggle{
+    .layout-header { left: 240px;}
+    .layout-menu-left { width: 240px;}
+    .container { left: 240px;}
+}
+
+.menu-items{
+    color:#888; cursor: pointer; margin-top: 15px;
+    li{
+        img{
+            width: 16px; height: 16px; padding-top: 10px; padding-bottom: 10px;
+        }
+        a{ color:#888; padding: 10px; display: block}
+        a:hover, a.on{
+            background: #f5f5f5; border: none;
+        }
+    }
+}
+.content-bar{
+    height: 50px; display: flex; flex-direction: row; justify-content: space-between; align-items: center; margin: -10px -10px 0 0px;
+}
+
+// common style
+.t-c{ text-align: center}
+.flex {
+  display: flex; flex-direction: row; align-items: center;
+  &-center {
+    justify-content: center;
+  }
+  &-between {
+    justify-content: space-between;
+  }
+  &-around {
+    justify-content: space-around;
+  }
+}
+.center{ justify-content: center; align-items: center}
+.space-around{ justify-content: space-around; align-items: center}
+.space-between{ justify-content: space-between; align-items: center}
+
+.box-list{
+    flex-wrap: wrap;
+    li{
+        width: 400px; height: 330px; background: #fff; margin:30px; position: relative;
+        .del { cursor: pointer; position: absolute; z-index: 5; top: -5px; right: -7px; width: 20px; height: 20px;}
+        .box-mask{ position: absolute; z-index: 3; top: 0; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.8);}
+    }
+    .box-shadow{ border-radius: 3px; box-shadow: 0px 2px 2px #ddd; overflow: hidden; padding: 10px; box-sizing: border-box;}
+}
+.cursor { cursor: pointer; }
+.p-10 { padding: 10px;}
+.p-t-10 {
+    padding-top: 10px;
+    > span{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+.p-t-5 { padding-top: 5px;}
+
+.svg_select_points_lt{cursor:nw-resize}.svg_select_points_rt{cursor:ne-resize}.svg_select_points_rb{cursor:se-resize}.svg_select_points_lb{cursor:sw-resize}.svg_select_points_t{cursor:n-resize}.svg_select_points_r{cursor:e-resize}.svg_select_points_b{cursor:s-resize}.svg_select_points_l{cursor:w-resize}.svg_select_points_rot{stroke-width:1;stroke:#2d8cf0;fill:#f9ffed}.svg_select_points_point{cursor:move}.svg_select_boundingRect{stroke-width:1;fill:gray;stroke-dasharray:10 10;stroke:#2d8cf0;stroke-opacity:.8;fill-opacity:.1;pointer-events:none}
+circle {
+  stroke:#2d8cf0;
+}
+.svg_select_points, .svg_select_points_point {
+  color:#2d8cf0;
+}
+.svg_select_points_lt{
+  cursor: nw-resize;
+}
+.svg_select_points_rt{
+  cursor: ne-resize;
+}
+.svg_select_points_rb{
+  cursor: se-resize;
+}
+.svg_select_points_lb{
+  cursor: sw-resize;
+}
+.svg_select_points_t{
+  cursor: n-resize;
+}
+.svg_select_points_r{
+  cursor: e-resize;
+}
+.svg_select_points_b{
+  cursor: s-resize;
+}
+.svg_select_points_l{
+  cursor: w-resize;
+}
+
+.svg_select_points_rot{
+  stroke-width:1;
+  stroke:#2d8cf0;
+  fill: #F9FFED;
+}
+
+.svg_select_points_point{
+  cursor: move;
+}
+
+.svg_select_boundingRect{
+  stroke-width:1;
+  fill:gray;
+  stroke-dasharray:10 10;
+  stroke:#2d8cf0;
+  stroke-opacity:0.8;
+  fill-opacity:0.1;
+  pointer-events:none; /* This ons is needed if you want to deselect or drag the shape*/
+}
+.product-list {
+    flex-wrap: wrap;
+    li {
+        width: 180px; height: 258px; padding: 10px; background: #fff; margin: 10px; position: relative; box-shadow: 0px 2px 2px #EEEEEE;
+        .img-box {
+            width: 160px; height: 180px; background-repeat:no-repeat; background-size: auto 100%; margin-bottom: 6px; background-position: center center;
+        }
+        .box-mask{ position: absolute; z-index: 3; top: 0; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.9);}
+        .info {
+            color:#ff0000;
+            .info-handler {
+                span {margin: 0 3px;}
+            }
+        }
+    }
+}
+
+.ivu-tooltip-popper {
+    z-index: 2999;
+}
+
+
+.collapse {
+    .btn {
+        padding: 3px 5px;
+    }
+}
+
+.file-input {
+    opacity: 0; position: absolute; top: 0; right: 0; left: 0; bottom: 0; z-index: 3; width: 100%;
+    & + div {
+        position: absolute; top: 0; right: 0; left: 0; bottom: 0; border: dashed 1px #E2E2E2; height: 100px;
+    }
+}
+
+.f16{ font-size: 16px;}
+.f14{ font-size: 14px;}
+.f12{ font-size: 12px;}
+.color-light {
+    color: @color-light
+}
+.ivu-steps {
+  &-title, &-head{
+    background: none!important;
+  }
+}
+.aside-bottom-bar {
+  height: 86px; border-top: solid 3px #f5f7f9;
+}
+
+.category-selected {
+  color: #2d8cf0;
+}
+.ivu-collapse-item-active {
+  i {
+    transform: rotate(0deg)!important;
+  }
+  .ivu-icon-arrow-right-b::before{
+    content: "\F208"!important;
+  }
+}
+
+.img-info {
+  position: fixed; bottom: 0; right: 0; z-index: 99; width: 240px;
+  &-box {
+    border-top: solid 3px #f0f0f0; box-sizing: border-box; padding: 10px;
+  }
+  &-img {
+    width: 60px; height: 80px; display: flex; justify-content: center; align-items: center;
+    img {
+      max-width: 100%; max-height: 100%;
+    }
+  }
+}
+
+.prev, .next {
+  position: absolute; width: 36px; height: 60px; top: 50%; margin-top: -30px; z-index: 99; background: #2d8cf0; display: flex; justify-content: center; align-items: center;
+  color: #fff; cursor: pointer;
+}
+.prev {
+  left: 10px;
+}
+.next {
+  right: 250px;
+}
+.upload-360-pic {
+  position: relative;
+  input {
+    position: absolute; width: 240px; height: 120px; top: 0; right: 0; left: 0; bottom: 0; opacity: 0;
+  }
+}
+.threesixty {
+  text-align: center;
+}
+.threesixty img {
+  max-width: 1000px; max-height: 450px; margin: 0 auto;
+}
+.blur {
+  -webkit-filter: blur(5px); /* Chrome, Opera */
+     -moz-filter: blur(5px);
+      -ms-filter: blur(5px);
+          filter: blur(5px);
+
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=5, MakeShadow=false); /* IE6~IE9 */
+}
+
+.ivu-upload-drag { background: none;}
+.overtext {
+  width: 140px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
